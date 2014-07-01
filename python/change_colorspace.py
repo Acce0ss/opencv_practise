@@ -5,6 +5,8 @@ import numpy as np
 
 img = cv2.imread('testikuvat/kisu.jpg')
 
+print [i for i in dir(cv2) if i.startswith('COLOR_BGR2')]
+
 cv2.imshow("Kissa!", img)
 
 cv2.waitKey()

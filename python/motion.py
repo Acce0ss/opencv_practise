@@ -23,7 +23,10 @@ if capt:
 		mask[:,:,1] = fgmask
 		mask[:,:,2] = fgmask
 
+		kernel = np.ones((5,5),np.uint8)
+		test = cv2.morphologyEx(fgmask, cv2.MORPH_OPEN, kernel)
 		cv2.imshow("Track", cv2.bitwise_and(mask, frame))
+		cv2.imshow("Track2", test)
 		cv2.imshow("vid", frame)
 		cv2.imshow("diff", cv2.absdiff(frame, first))
 		
